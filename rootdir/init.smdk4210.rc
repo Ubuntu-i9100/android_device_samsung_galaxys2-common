@@ -160,6 +160,7 @@ on post-fs-data
     chown system radio /sys/devices/platform/sec-battery/power_supply/battery/batt_vol
 
     chown system system /sys/class/backlight/panel/brightness
+    chmod 0666 /sys/class/backlight/panel/brightness
     chown system system /sys/class/power_supply/battery/temp
 
 # Permissions for input devices
