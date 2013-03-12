@@ -42,7 +42,8 @@ on post-fs-data
 # insmod kernel modules
     insmod /system/lib/modules/j4fs.ko
     insmod /system/lib/modules/Si4709_driver.ko
-    
+    insmod /system/lib/modules/dhd.ko firmware_path=/system/etc/wifi/bcmdhd_apsta.bin nvram_path=/system/etc/wifi/nvram_net.txt
+
 # mount param.lfs
     mount j4fs /dev/block/mmcblk0p4 /mnt/.lfs
 
