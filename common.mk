@@ -15,8 +15,6 @@
 #
 COMMON_PATH := device/samsung/galaxys2-common
 
-DEVICE_PACKAGE_OVERLAYS := $(COMMON_PATH)/overlay
-
 # Init files
 PRODUCT_COPY_FILES := \
     $(COMMON_PATH)/rootdir/fstab.smdk4210:root/fstab.smdk4210 \
@@ -53,12 +51,6 @@ $(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/firmware/bcm4330
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/gps.conf:system/etc/gps.conf \
     $(COMMON_PATH)/configs/sirfgps.conf:system/etc/sirfgps.conf
-
-# Packages
-PRODUCT_PACKAGES := \
-    com.android.future.usb.accessory \
-    SamsungServiceMode \
-    Torch
 
 # Audio Packages
 PRODUCT_PACKAGES += \
@@ -123,18 +115,6 @@ PRODUCT_PACKAGES += \
     make_ext4fs \
     setup_fs
 
-# Live Wallpapers
-PRODUCT_PACKAGES += \
-    Galaxy4 \
-    HoloSpiralWallpaper \
-    LiveWallpapers \
-    LiveWallpapersPicker \
-    MagicSmokeWallpapers \
-    NoiseField \
-    PhaseBeam \
-    VisualizationWallpapers \
-    librs_jni
-
 # These are the hardware-specific features
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.audio.low_latency.xml:system/etc/permissions/android.hardware.audio.low_latency.xml \
@@ -160,10 +140,6 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml \
     frameworks/native/data/etc/android.software.sip.xml:system/etc/permissions/android.software.sip.xml \
     frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml
-
-# Feature live wallpaper
-PRODUCT_COPY_FILES += \
-    packages/wallpapers/LivePicker/android.software.live_wallpaper.xml:system/etc/permissions/android.software.live_wallpaper.xml
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.opengles.version=131072 \
