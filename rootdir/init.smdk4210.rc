@@ -229,6 +229,7 @@ on post-fs-data
     chown system media_rw /sys/class/lcd/panel/gamma_mode
     chown system media_rw /sys/class/lcd/panel/power_reduce
     chown system system /sys/class/backlight/panel/auto_brightness
+    chmod 0666 /sys/class/backlight/panel/auto_brightness
 
 # Permissions for mDNIe
     chown system media_rw /sys/class/mdnie/mdnie/mode
@@ -275,7 +276,7 @@ on post-fs-data
 
 # backlight permissions
     chown system system /sys/class/backlight/pwm-backlight/brightness
-    chmod 0660 /sys/class/backlight/pwm-backlight/brightness
+    chmod 0666 /sys/class/backlight/pwm-backlight/brightness
     chown radio system /sys/devices/virtual/misc/melfas_touchkey/brightness
     chmod 0660 /sys/devices/virtual/misc/melfas_touchkey/brightness
 
